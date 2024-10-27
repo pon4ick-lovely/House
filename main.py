@@ -9,6 +9,7 @@ class House():
         return super().__new__(cls)
 
     def __del__(self):
+        self.houses_history.remove(self.name)
         print(f'{self.name} снесён, но он останется в истории')
 
     def __init__(self, name, number_of_floors):
@@ -83,6 +84,7 @@ print(House.houses_history)
 h2 = House('ЖК Акация', 20)
 print(House.houses_history)
 h3 = House('ЖК Матрёшки', 20)
+print(House.houses_history)
 print(House.houses_history)
 
 # Удаление объектов
