@@ -10,7 +10,7 @@ class House():
 
     def __del__(self):
         self.houses_history.remove(self.name)
-        print(f'{self.name} снесён, но он останется в истории')
+        print(f'{self.name} demolished, but it will remain in history')
 
     def __init__(self, name, number_of_floors):
         self.name = name
@@ -18,7 +18,7 @@ class House():
 
     def go_to(self, new_floor):
         if new_floor > self.number_of_floors or new_floor < 1:
-            print('Такого этажа не существует')
+            print('This floor does not exist')
         else:
             for floor in range(1, new_floor + 1):
                 print(floor)
@@ -33,13 +33,13 @@ class House():
         if isinstance(other, House):
             return self.number_of_floors == other.number_of_floors
         else:
-            print('__eq__: Для сравнения необходим объект класса House!')
+            print('__eq__: An object of the House class is required for comparison!')
 
     def __add__(self, value):
         if isinstance(value, int):
             self.number_of_floors = self.number_of_floors + value
         else:
-            print('__add__: Для сложения необходимо передать целое число!')
+            print('__add__: to add you must pass an integer')
         return self
 
     def __iadd__(self, value):
@@ -52,31 +52,31 @@ class House():
         if isinstance(other, House):
             return self.number_of_floors > other.number_of_floors
         else:
-            print('__gt__: Для сравнения необходим объект класса House!')
+            print('__gt__: An object of the House class is required for comparison!')
 
     def __ge__(self, other):
         if isinstance(other, House):
             return self.number_of_floors >= other.number_of_floors
         else:
-            print('__ge__: Для сравнения необходим объект класса House!')
+            print('__ge__: An object of the House class is required for comparison!')
 
     def __lt__(self, other):
         if isinstance(other, House):
             return self.number_of_floors < other.number_of_floors
         else:
-            print('__lt__: Для сравнения необходим объект класса House!')
+            print('__lt__: An object of the House class is required for comparison!')
 
     def __le__(self, other):
         if isinstance(other, House):
             return self.number_of_floors <= other.number_of_floors
         else:
-            print('__le__: Для сравнения необходим объект класса House!')
+            print('__le__: An object of the House class is required for comparison!')
 
     def __ne__(self, other):
         if isinstance(other, House):
             return self.number_of_floors != other.number_of_floors
         else:
-            print('__ne__: Для сравнения необходим объект класса House!')
+            print('__ne__: An object of the House class is required for comparison!')
 
 # Создание объектов
 h1 = House('ЖК Эльбрус', 10)
